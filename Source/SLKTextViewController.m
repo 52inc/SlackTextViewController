@@ -265,7 +265,7 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
         _tableView.scrollsToTop = YES;
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.clipsToBounds = NO;
+        _tableView.clipsToBounds = YES;
 
         [self slk_updateInsetAdjustmentBehavior];
     }
@@ -765,7 +765,7 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
 {
     NSString *text = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    if (text.length > 0 && ![_textInputbar limitExceeded]) {
+    if (text.length > 0) {
         return YES;
     }
     

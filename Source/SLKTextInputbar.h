@@ -63,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** The most appropriate height calculated based on the amount of lines of text and other factors. */
 @property (nonatomic, readonly) CGFloat appropriateHeight;
 
+/** The top divider. Modify properties or hide/show it. */
+@property (nonatomic, strong, readonly) UIView *topDividerLine;
+
 
 #pragma mark - Initialization
 ///------------------------------------------------
@@ -120,33 +123,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)endTextEdition;
 
 
-#pragma mark - Text Counting
-///------------------------------------------------
-/// @name Text Counting
-///------------------------------------------------
-
-/** The label used to display the character counts. */
-@property (nonatomic, readonly) UILabel *charCountLabel;
-
-/** The maximum character count allowed. If larger than 0, a character count label will be displayed on top of the right button. Default is 0, which means limitless.*/
-@property (nonatomic, readwrite) NSUInteger maxCharCount;
-
-/** The character counter formatting. Ignored if maxCharCount is 0. Default is None. */
-@property (nonatomic, assign) SLKCounterStyle counterStyle;
-
-/** The character counter layout style. Ignored if maxCharCount is 0. Default is SLKCounterPositionTop. */
-@property (nonatomic, assign) SLKCounterPosition counterPosition;
-
-/** YES if the maxmimum character count has been exceeded. */
-@property (nonatomic, readonly) BOOL limitExceeded;
-
-/** The normal color used for character counter label. Default is lightGrayColor. */
-@property (nonatomic, strong, readwrite) UIColor *charCountLabelNormalColor;
-
-/** The color used for character counter label when it has exceeded the limit. Default is redColor. */
-@property (nonatomic, strong, readwrite) UIColor *charCountLabelWarningColor;
-
-@end
-
 NS_ASSUME_NONNULL_END
 
+@end
