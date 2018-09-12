@@ -80,7 +80,7 @@ NSString * const SLKTextInputbarDidMoveNotification =   @"SLKTextInputbarDidMove
     
     self.autoHideRightButton = NO;
     self.editorContentViewHeight = 38.0;
-    self.contentInset = UIEdgeInsetsMake(0.0, 16.0, 32.0, 36.0);
+    self.contentInset = UIEdgeInsetsMake(0.0, 16.0, 16.0, 36.0);
     self.backgroundColor = [UIColor whiteColor];
 
     // Since iOS 11, it is required to call -layoutSubviews before adding custom subviews
@@ -142,7 +142,7 @@ NSString * const SLKTextInputbarDidMoveNotification =   @"SLKTextInputbarDidMove
         rightSafeArea = [self safeAreaInsets].right;
     }
     
-    CGRect textBoxRect = CGRectMake(leftSafeArea + 16.0, 0, CGRectGetWidth(rect) - 32.0 - leftSafeArea - rightSafeArea, CGRectGetHeight(rect) - 32.0);
+    CGRect textBoxRect = CGRectMake(leftSafeArea + 16.0, 0, CGRectGetWidth(rect) - 32.0 - leftSafeArea - rightSafeArea, CGRectGetHeight(rect) - 16.0);
     [[UIColor colorWithRed:229.0/255.0 green:231.0/255.0 blue:235.0/255.0 alpha:1.0] set];
     CGPathRef path = [[UIBezierPath bezierPathWithRoundedRect:textBoxRect cornerRadius:4.0] CGPath];
     
@@ -702,7 +702,7 @@ NSString * const SLKTextInputbarDidMoveNotification =   @"SLKTextInputbarDidMove
         
         if (leftButtonSize.width > 0) {
             self.leftButtonHC.constant = roundf(leftButtonSize.height);
-            self.leftButtonBottomMarginC.constant = roundf((self.intrinsicContentSize.height - leftButtonSize.height) / 2.0) + (self.slk_contentViewHeight / 2.0) + 16.0;
+            self.leftButtonBottomMarginC.constant = roundf((self.intrinsicContentSize.height - leftButtonSize.height) / 2.0) + (self.slk_contentViewHeight / 2.0) + 8.0;
         }
         
         self.leftButtonWC.constant = roundf(leftButtonSize.width);
@@ -714,8 +714,8 @@ NSString * const SLKTextInputbarDidMoveNotification =   @"SLKTextInputbarDidMove
         CGFloat rightVerMargin = (self.intrinsicContentSize.height - self.slk_contentViewHeight - self.rightButton.intrinsicContentSize.height) / 2.0;
         CGFloat rightVerBottomMargin = rightVerMargin + self.slk_contentViewHeight;
         
-        self.rightButtonTopMarginC.constant = rightVerMargin - 16.0;
-        self.rightButtonBottomMarginC.constant = rightVerBottomMargin + 16.0;
+        self.rightButtonTopMarginC.constant = rightVerMargin - 8.0;
+        self.rightButtonBottomMarginC.constant = rightVerBottomMargin + 8.0;
     }
 }
 

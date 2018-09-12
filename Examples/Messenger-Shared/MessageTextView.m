@@ -22,7 +22,7 @@
 {
     [super willMoveToSuperview:newSuperview];
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     
     self.placeholder = NSLocalizedString(@"Message", nil);
     self.placeholderColor = [UIColor lightGrayColor];
